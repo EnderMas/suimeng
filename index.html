@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>碎梦</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-screen">
+            <!-- 状态栏 -->
+            <div class="status-bar">
+                <div class="status-left">
+                    <span class="time">16:20</span>
+                </div>
+                <div class="status-right">
+                    <span class="signal">•••</span>
+                    <span class="wifi">📶</span>
+                    <span class="battery">🔋 85%</span>
+                </div>
+            </div>
+            
+            <!-- 主屏幕内容 -->
+            <div class="main-content" id="mainContent">
+                <!-- 锁屏界面 -->
+                <div class="lock-screen" id="lockScreen">
+                    <div class="time-display">
+                        <div class="current-time">16:20</div>
+                        <div class="current-date">10月28日 星期二</div>
+                    </div>
+                    
+                    <div class="wallpaper-text">
+                        <h1>碎梦</h1>
+                        <p>记忆在梦境中缓缓苏醒...</p>
+                    </div>
+                    
+                    <div class="unlock-area">
+                        <div class="unlock-hint">滑动解锁</div>
+                        <div class="slider-container">
+                            <div class="slider-track">
+                                <div class="slider-thumb" id="sliderThumb">
+                                    <span class="slider-icon">▶</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 桌面界面 -->
+                <div class="desktop" id="desktop" style="display: none;">
+                    <div class="wallpaper">
+                        <div class="desktop-time">
+                            <div class="time">16:20</div>
+                            <div class="date">10月28日</div>
+                        </div>
+                    </div>
+                    
+                    <!-- App网格 -->
+                    <div class="app-grid" id="appGrid">
+                        <!-- 第一页 -->
+                        <div class="app-page active">
+                            <div class="app-icon" data-app="photos">
+                                <div class="icon-bg gradient-1">🖼️</div>
+                                <div class="app-name">照片</div>
+                            </div>
+                            <div class="app-icon" data-app="messages">
+                                <div class="icon-bg gradient-2">💬</div>
+                                <div class="app-name">信息</div>
+                            </div>
+                            <div class="app-icon" data-app="settings" data-long-press="true">
+                                <div class="icon-bg gradient-3">⚙️</div>
+                                <div class="app-name">设置</div>
+                            </div>
+                            <div class="app-icon" data-app="notes">
+                                <div class="icon-bg gradient-4">📝</div>
+                                <div class="app-name">备忘录</div>
+                            </div>
+                            <div class="app-icon" data-app="investigate">
+                                <div class="icon-bg gradient-5">🔍</div>
+                                <div class="app-name">调查板</div>
+                            </div>
+                            <div class="app-icon" data-app="memories">
+                                <div class="icon-bg gradient-6">🧠</div>
+                                <div class="app-name">记忆</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 底部dock -->
+                    <div class="dock">
+                        <div class="home-indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 调试面板 -->
+    <div class="debug-panel" id="debugPanel">
+        <h3>🛠️ 调试面板</h3>
+        <button onclick="resetGame()">重置游戏</button>
+        <button onclick="skipToDesktop()">跳转桌面</button>
+        <button onclick="toggleDebug()">隐藏面板</button>
+        <div class="debug-info">
+            <p>LocalStorage: <span id="storageInfo">正常</span></p>
+            <p>屏幕尺寸: <span id="screenInfo"></span></p>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>
